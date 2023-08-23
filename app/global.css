@@ -1,0 +1,15 @@
+html,
+body {
+  background-color: #232323;
+  color: #fff;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #2979ff;
+}
