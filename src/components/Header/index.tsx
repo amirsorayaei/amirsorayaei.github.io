@@ -17,7 +17,12 @@ const Header = () => {
         <a href="#about">About</a>
         <a href="#experinces">Experiences</a>
         <a href="#contact">Contact</a>
-        <a href="#resume">Resume</a>
+        <a
+          href="https://docs.google.com/document/d/e/2PACX-1vQ_xahUvKDUoGX0qSZiMfjKvp3TzSX0c1mYScl3aZqhIObYw7gjowt3oRTDdTZu6eORUNJaXL1fuTpw/pub"
+          target="_blank"
+        >
+          Resume
+        </a>
       </li>
     </header>
   );
