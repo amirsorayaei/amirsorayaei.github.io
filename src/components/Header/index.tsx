@@ -6,13 +6,15 @@ import Logo from "@/src/assets/logo.jpg";
 const Header = () => {
   return (
     <header>
-      <Image
-        src={Logo}
-        alt="logo"
-        width={60}
-        height={60}
-        style={{ borderRadius: "50%" }}
-      />
+      <a href="#">
+        <Image
+          src={Logo}
+          alt="logo"
+          width={60}
+          height={60}
+          style={{ borderRadius: "50%" }}
+        />
+      </a>
       <li>
         <a href="#about">About</a>
         <a href="#experinces">Experiences</a>
