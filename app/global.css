@@ -6,7 +6,14 @@
 
 html,
 body {
-  background-color: #0a192f;
+  background-image: linear-gradient(
+    to left top,
+    #0a192f,
+    #0d1d36,
+    #0f223d,
+    #122644,
+    #152b4b
+  );
   color: #fff;
 }
 
