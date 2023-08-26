@@ -1,0 +1,33 @@
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sticky {
+    position: relative;
+  }
+
+  .wrapper {
+    font-size: small;
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+}
