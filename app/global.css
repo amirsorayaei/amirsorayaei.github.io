@@ -46,6 +46,23 @@ header {
 
 header a {
   padding: 0 10px;
+  font-weight: 600;
+}
+
+header li :last-child {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: none;
+  transition: all 0.3s;
+  font-family: unset;
+  color: #fff;
+
+  &:hover {
+    background-color: #fff;
+    color: #152b4b;
+  }
 }
 
 main {
