@@ -2,12 +2,14 @@ import React from "react";
 
 import About from "../About";
 import Title from "../Title";
+import Experiences from "../Experiences";
 
 const Main = () => {
   return (
     <main>
-      <Title />
-      <About />
+      {/* <Title />
+      <About /> */}
+      <Experiences />
     </main>
   );
 };

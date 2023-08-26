@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "company": "A.P.P Software Solutions",
+      "role": "Front-End developer",
+      "startDate": "Sep 2020",
+      "endDate": null,
+      "currentlyWorking": true,
+      "location": "Mashhad, Iran",
+      "descriptions": [
+        "Optimized existing codebase effectively to reduce page load times by 34%.",
+        "Implemented Github CI/CD to automate the client's software deployment process, lowered deployment time by 60%, and minimized manual intervention.",
+        "Collaborated with backend developers to optimize application performance by reducing API calls, resulting in faster load times and a 25% increase in user engagement.",
+        "Conducted end-to-end testing for a significant product release using Unit testing and reduced average bug detection time.",
+        "Implemented an interactive online support system so clients can immediately contact the support team without waiting to call them, resulting in a decent user experience for both parties."
+      ],
+      "skills": []
+    },
+    {
+      "id": 2,
+      "company": "Hoomaan",
+      "role": "Front-End developer",
+      "startDate": "Apr 2019",
+      "endDate": "Sep 2020",
+      "currentlyWorking": false,
+      "location": "Mashhad, Iran",
+      "descriptions": [
+        "Developed and maintained multiple customer service projects, including online shopping applications, resulting in improved user experience and increased customer satisfaction.",
+        "Resolved critical bugs successfully and established strategies to prevent future issues, reducing bug reports and improving applications' stability.",
+        "Collaborated with designers, back-end developers, and project managers to ensure smooth project execution and alignment with client expectations as a React Js developer."
+      ],
+      "skills": []
+    }
+  ]
+}
