@@ -8,6 +8,7 @@
 
   a {
     color: #a8b2d1;
+    transition: all 0.3s ease-out;
   }
 
   .text {
@@ -33,5 +34,10 @@
     :last-child {
       padding-bottom: 0;
     }
+  }
+
+  a:hover {
+    color: #fff;
+    scale: 1.1;
   }
 }
