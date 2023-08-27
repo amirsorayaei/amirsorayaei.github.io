@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import Script from "next/script";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,6 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Amir Sorayaei</title>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PTDXQBB1BC"
+        />
+      </head>
       <body className={montserrat.className}>{children}</body>
     </html>
   );
