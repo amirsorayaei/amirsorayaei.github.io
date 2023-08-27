@@ -11,6 +11,7 @@ import React, {
 import ExperiencesData from "@/src/db/experiences.json";
 import { Experience } from "@/src/types/types";
 import styles from "./index.module.scss";
+import FadeInWhenVisible from "@/src/components/FadeInWhenVisible";
 
 const Experiences = () => {
   const listsRef = useRef<any[]>([]);
@@ -30,7 +31,7 @@ const Experiences = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div id="experinces" className={styles.container}>
       <div className={styles.listWrapper}>
         {data.map((item, index) => {
           return (
@@ -60,23 +61,28 @@ const ExperienceItem = forwardRef(({ item }: { item: Experience }, ref) => {
   }));
 
   return (
-    <div ref={elementRef} className={styles.itemWrapper}>
-      <div className={styles.arrow} />
-      <h4>
-        {item.role} <span> at {item.company}</span>
-      </h4>
-      <span>
-        {item.startDate} - {item.currentlyWorking ? "Present" : item.endDate}
-        &nbsp;({item.location})
-      </span>
-      {item.descriptions.map((description, index) => {
-        return (
-          <p key={index} className={styles.description}>
-            {description}
-          </p>
-        );
-      })}
-    </div>
+    <FadeInWhenVisible>
+      <div ref={elementRef} className={styles.itemWrapper}>
+        <div className={styles.date}>
+          <span>
+            {item.startDate} -{" "}
+            {item.currentlyWorking ? "Present" : item.endDate}
+          </span>
+        </div>
+        <div className={styles.arrow} />
+        <h4>
+          {item.role} <span> at {item.company}</span>
+        </h4>
+        <span>{item.location}</span>
+        {item.descriptions.map((description, index) => {
+          return (
+            <p key={index} className={styles.description}>
+              {description}
+            </p>
+          );
+        })}
+      </div>
+    </FadeInWhenVisible>
   );
 });
 

@@ -1,13 +1,24 @@
 {
   "data": [
     {
+      "id": 2,
+      "company": "Roomvu",
+      "role": "Front-End developer",
+      "startDate": "Sep 2023",
+      "endDate": "",
+      "currentlyWorking": true,
+      "location": "Vancouver, British Columbia, Canada · Remote",
+      "descriptions": [],
+      "skills": []
+    },
+    {
       "id": 1,
       "company": "A.P.P Software Solutions",
       "role": "Front-End developer",
       "startDate": "Sep 2020",
-      "endDate": null,
-      "currentlyWorking": true,
-      "location": "Mashhad, Iran",
+      "endDate": "Aug 2023",
+      "currentlyWorking": false,
+      "location": "Mashhad, Iran · Hybrid",
       "descriptions": [
         "Optimized existing codebase effectively to reduce page load times by 34%.",
         "Implemented Github CI/CD to automate the client's software deployment process, lowered deployment time by 60%, and minimized manual intervention.",
@@ -24,7 +35,7 @@
       "startDate": "Apr 2019",
       "endDate": "Sep 2020",
       "currentlyWorking": false,
-      "location": "Mashhad, Iran",
+      "location": "Mashhad, Iran · Hybrid",
       "descriptions": [
         "Developed and maintained multiple customer service projects, including online shopping applications, resulting in improved user experience and increased customer satisfaction.",
         "Resolved critical bugs successfully and established strategies to prevent future issues, reducing bug reports and improving applications' stability.",
