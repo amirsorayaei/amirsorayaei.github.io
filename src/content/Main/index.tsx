@@ -7,8 +7,8 @@ import Experiences from "../Experiences";
 const Main = () => {
   return (
     <main>
-      {/* <Title />
-      <About /> */}
+      <Title />
+      <About />
       <Experiences />
     </main>
   );
