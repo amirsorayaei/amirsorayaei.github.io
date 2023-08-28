@@ -1,9 +1,18 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import Image from "next/image";
+import { CgMenuRightAlt } from "react-icons/cg";
+import { MdClose } from "react-icons/md";
 
 import Logo from "@/src/assets/logo.png";
+import { SidebarContext } from "@/src/contexts/SidebarContext";
 
 const Header = () => {
+  const { toggleSidebar, sidebarToggle } = useContext(SidebarContext);
+
+  const MenuIcon = sidebarToggle ? MdClose : CgMenuRightAlt;
+
   return (
     <header>
       <a href="#">
@@ -20,6 +29,7 @@ const Header = () => {
           Resume
         </a>
       </li>
+      <MenuIcon size={30} className="hamburger-menu" onClick={toggleSidebar} />
     </header>
   );
 };

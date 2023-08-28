@@ -7,16 +7,21 @@ import "@/app/root.scss";
 import Header from "@/src/components/Header";
 import Sidebar from "@/src/components/Siderbar";
 import Contact from "@/src/content/Contact";
+import SidebarMenu from "@/src/components/SidebarMenu";
+import { SidebarProvider } from "@/src/contexts/SidebarContext";
 
 const Home = () => {
   return (
     <div id="content">
-      <Header />
-      <Main />
-      <Contact />
-      <Sidebar orientation="left" />
-      <Sidebar orientation="right" />
-      <Footer />
+      <SidebarProvider>
+        <Header />
+        <SidebarMenu />
+        <Main />
+        <Contact />
+        <Sidebar orientation="left" />
+        <Sidebar orientation="right" />
+        <Footer />
+      </SidebarProvider>
     </div>
   );
 };

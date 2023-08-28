@@ -10,7 +10,7 @@
     content: "";
     width: 1px;
     height: 80px;
-    background: linear-gradient(to top, #a8b2d1, #ffffff00);
+    background: linear-gradient(to top, var(--color-secondary), transparent);
     margin-top: 30px;
   }
 
@@ -27,7 +27,7 @@
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
