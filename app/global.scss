@@ -17,6 +17,10 @@ body {
   color: #fff;
 }
 
+h1 {
+  font-size: 5rem;
+}
+
 a {
   text-decoration: none;
   color: #2979ff;
@@ -48,7 +52,6 @@ header {
 
   a {
     padding: 0 10px;
-    font-weight: 500;
   }
 
   img {
@@ -63,7 +66,6 @@ header {
     margin-left: 10px;
     box-shadow: none;
     transition: all 0.3s;
-    font-family: unset;
     color: #fff;
 
     &:hover {
@@ -90,9 +92,9 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
   }
 
   header {
@@ -104,8 +106,6 @@ footer {
   }
 
   footer {
-    font-size: small;
-
     li {
       display: flex;
 
