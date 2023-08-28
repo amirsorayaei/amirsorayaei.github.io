@@ -4,7 +4,6 @@
   max-width: 550px;
 
   h2 {
-    line-height: 2;
     text-align: center;
     white-space: pre-line;
   }
@@ -37,7 +36,6 @@
         font-family: inherit;
         font-size: inherit;
         white-space: pre-line;
-        line-height: 1.5;
         resize: vertical;
 
         &::placeholder {
