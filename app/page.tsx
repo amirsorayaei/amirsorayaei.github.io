@@ -1,7 +1,7 @@
 import Footer from "@/src/components/Footer";
 import Main from "@/src/content/Main";
 
-import "@/app/global.css";
+import "@/app/global.scss";
 import Header from "@/src/components/Header";
 import Sidebar from "@/src/components/Siderbar";
 import Contact from "@/src/content/Contact";

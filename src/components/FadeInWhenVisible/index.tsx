@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimationProps, motion } from "framer-motion";
 
-interface Props {
+interface Props extends AnimationProps {
   children: React.ReactNode | React.ReactNode[];
   className?: string;
 }
 
-const FadeInWhenVisible = ({ children, className }: Props) => {
+const FadeInWhenVisible = ({ children, className, ...props }: Props) => {
   return (
     <motion.div
       initial="hidden"
@@ -20,6 +20,7 @@ const FadeInWhenVisible = ({ children, className }: Props) => {
         visible: { opacity: 1, scale: 1 },
       }}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>
