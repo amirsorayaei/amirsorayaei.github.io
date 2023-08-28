@@ -50,6 +50,10 @@ header a {
   font-weight: 500;
 }
 
+header img {
+  scale: 1.2;
+}
+
 header li :last-child {
   background-color: transparent;
   border: 1px solid #fff;

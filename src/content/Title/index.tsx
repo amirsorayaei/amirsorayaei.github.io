@@ -10,8 +10,8 @@ import styles from "./index.module.scss";
 const Title = () => {
   const { scrollYProgress } = useScroll();
 
-  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.7]);
-  const translateX = useTransform(scrollYProgress, [0, 0.3], ["0%", "-30%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.7]);
+  const translateX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-30%"]);
 
   const style = { scale, translateX };
 

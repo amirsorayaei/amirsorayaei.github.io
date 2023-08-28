@@ -9,3 +9,8 @@ export interface Experience {
   descriptions: string[];
   skills: string[];
 }
+
+export interface Result {
+  message: string;
+  type: "success" | "error";
+}
