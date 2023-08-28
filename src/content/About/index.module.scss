@@ -1,10 +1,11 @@
 .wrapper {
   p {
-    text-align: justify;
     width: 50%;
+    font-size: var(--fz-xl);
+    line-height: 2;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 480px) {
     p {
       width: 100%;
     }

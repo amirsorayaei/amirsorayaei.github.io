@@ -12,7 +12,6 @@ import ExperiencesData from "@/src/db/experiences.json";
 import { Experience } from "@/src/types/types";
 import styles from "./index.module.scss";
 import FadeInWhenVisible from "@/src/components/FadeInWhenVisible";
-import Page from "@/src/components/Page";
 
 const Experiences = () => {
   const listsRef = useRef<any[]>([]);
@@ -32,7 +31,7 @@ const Experiences = () => {
   }, []);
 
   return (
-    <Page id="experinces" className={styles.container}>
+    <div id="experinces" className={`page-container ${styles.container}`}>
       <div className={styles.listWrapper}>
         {data.map((item, index) => {
           return (
@@ -44,7 +43,7 @@ const Experiences = () => {
           );
         })}
       </div>
-    </Page>
+    </div>
   );
 };
 

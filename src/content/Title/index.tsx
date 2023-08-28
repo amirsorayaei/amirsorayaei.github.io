@@ -5,6 +5,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 
 import FadeInWhenVisible from "@/src/components/FadeInWhenVisible";
 import { isMobile } from "@/src/utils/helpers";
+
 import styles from "./index.module.scss";
 
 const Title = () => {
@@ -23,7 +24,7 @@ const Title = () => {
         style={!isMobile() ? style : {}}
       >
         <p>Hi, this is</p>
-        <h1>Amir Sorayaei</h1>
+        <h1 className="big-heading">Amir Sorayaei</h1>
         <h2>Frontend Developer</h2>
       </motion.div>
     </FadeInWhenVisible>

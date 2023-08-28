@@ -2,8 +2,8 @@ $size: 20px;
 $border-size: 3px;
 
 .loader {
-  border: $border-size solid #f3f3f3; /* Light grey */
-  border-top: $border-size solid #3498db; /* Blue */
+  border: $border-size solid var(--color-white); /* Light grey */
+  border-top: $border-size solid var(--color-primary); /* Blue */
   border-radius: 50%;
   width: $size;
   height: $size;

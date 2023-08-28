@@ -1,32 +1,32 @@
-.container {
-  padding-top: 150px;
-  padding-bottom: 150px;
+$date-width: 150px;
 
+.container {
   .listWrapper {
     flex: 0.5;
-    padding: 0 20px;
+    padding-left: 20px;
     position: relative;
+    margin: 150px 0;
 
     &::before {
       content: "";
       width: 1px;
       height: 100%;
       left: -10px;
-      background-color: #a8b2d1;
+      background-color: var(--color-secondary);
       position: absolute;
     }
 
     .itemWrapper {
-      background-color: #152b4b;
-      padding: 20px 40px;
+      background-color: var(--color-primary);
+      padding: 20px 20px 20px 30px;
       border-radius: 10px;
       position: relative;
-      margin: 40px 0;
+      margin: 20px 0;
 
       .date {
         position: absolute;
-        left: calc(0px - 150px - 20px * 2 - 10px);
-        width: 150px;
+        left: calc(0px - $date-width - 20px * 2 - 10px);
+        width: $date-width;
         top: calc(25px - 20px / 2);
         margin: 10px 0;
         text-align: right;
@@ -36,19 +36,19 @@
         margin-bottom: 5px;
 
         span {
-          color: #a8b2d1;
+          color: var(--color-secondary);
         }
       }
 
       .description {
         margin: 15px 0;
         position: relative;
-        color: #a8b2d1;
+        color: var(--color-secondary);
 
         &::before {
           content: "";
           position: absolute;
-          background-color: #a8b2d1;
+          background-color: var(--color-secondary);
           width: 8px;
           height: 8px;
           border-radius: 50%;
@@ -65,7 +65,7 @@
         height: 0;
         width: 0;
         border: 10px solid transparent;
-        border-right: 10px solid #152b4b;
+        border-right: 10px solid var(--color-primary);
       }
 
       &::before {
@@ -76,9 +76,33 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: #a8b2d1;
+        background-color: var(--color-secondary);
         margin: 10px 0;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .listWrapper {
+      flex: 0.95;
+      margin: 100px 0;
+
+      .itemWrapper {
+        .date {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: -10px 0 10px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .listWrapper {
+      flex: 0.8;
     }
   }
 }

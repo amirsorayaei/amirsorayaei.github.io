@@ -1,11 +1,11 @@
 .socials {
   a {
-    color: #a8b2d1;
+    color: var(--color-secondary);
     transition: all 0.3s ease-out;
   }
 
   a:hover {
-    color: #fff;
+    color: var(--color-white);
     scale: 1.1;
   }
 }

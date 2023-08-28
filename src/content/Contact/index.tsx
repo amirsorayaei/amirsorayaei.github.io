@@ -7,7 +7,6 @@ import Loading from "@/src/components/Loading";
 import { Result } from "@/src/types/types";
 
 import styles from "./index.module.scss";
-import Page from "@/src/components/Page";
 
 const Contact = () => {
   const [fullname, setFullName] = useState<string>("");
@@ -55,14 +54,14 @@ const Contact = () => {
      * Display success message
      */
     if (result?.type === "success") {
-      return <h2 style={{ color: "#4caf50" }}>{result.message}</h2>;
+      return <h2 className="success">{result.message}</h2>;
     }
 
     /**
      * Display error message
      */
     if (result?.type === "error") {
-      return <h2 style={{ color: "#f44336" }}>{result.message}</h2>;
+      return <h2 className="error">{result.message}</h2>;
     }
 
     /**
@@ -70,7 +69,7 @@ const Contact = () => {
      */
     return (
       <div className={styles.form}>
-        <h1>Contact Me</h1>
+        <h1 className="medium-heading">Contact Me</h1>
         <h4>Let me know what you need!</h4>
         <div className={styles.inputContainer}>
           <span>Fullame</span>
@@ -94,7 +93,7 @@ const Contact = () => {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder={`How can I help you?\nWrite it down here ...`}
+            placeholder={`How can I help you?`}
           />
         </div>
         <button disabled={loading} onClick={submit}>
@@ -105,9 +104,9 @@ const Contact = () => {
   };
 
   return (
-    <Page id="contact" className={styles.wrapper}>
+    <div id="contact" className={`page-container ${styles.wrapper}`}>
       {renderContent()}
-    </Page>
+    </div>
   );
 };
 

@@ -10,13 +10,9 @@
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-
-  h1 {
-    margin-bottom: 10px;
-  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
   .sticky {
     position: relative;
   }
