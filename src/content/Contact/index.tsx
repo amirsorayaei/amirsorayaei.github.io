@@ -7,6 +7,7 @@ import Loading from "@/src/components/Loading";
 import { Result } from "@/src/types/types";
 
 import styles from "./index.module.scss";
+import Page from "@/src/components/Page";
 
 const Contact = () => {
   const [fullname, setFullName] = useState<string>("");
@@ -104,9 +105,9 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className={styles.wrapper}>
+    <Page id="contact" className={styles.wrapper}>
       {renderContent()}
-    </div>
+    </Page>
   );
 };
 
