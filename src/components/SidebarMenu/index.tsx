@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 
 import { SidebarContext } from "@/src/contexts/SidebarContext";
 
@@ -21,11 +21,11 @@ const SidebarMenu = () => {
   };
 
   const opacity = sidebarToggle ? 1 : 0;
-  const transform = sidebarToggle ? "translateX(0%)" : "translateX(100%)";
+  const transform = sidebarToggle ? "translateX(0%)" : "translateX(110%)";
 
   return (
-    <div style={{ opacity }} className="sidebar-menu">
-      <div style={{ transform }} className="menu-list">
+    <div style={{ opacity, transform }} className="sidebar-menu">
+      <div className="menu-list">
         <li onClick={onClickLink}>
           <a href="#about">About</a>
           <a href="#experinces">Experiences</a>

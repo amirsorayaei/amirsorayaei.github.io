@@ -92,8 +92,14 @@ header {
   z-index: 10;
   backdrop-filter: blur(5px);
 
-  li > a {
+  li a {
+    display: inline-block;
     padding: 0 10px;
+    transition: all 0.3s;
+
+    &:hover {
+      scale: 1.1;
+    }
   }
 
   img {
@@ -107,7 +113,6 @@ header {
     padding: 5px 10px;
     margin-left: 10px;
     box-shadow: none;
-    transition: all 0.3s;
     color: var(--color-white);
     font-weight: 600;
 
@@ -155,7 +160,6 @@ header {
     font-size: var(--fz-xxl);
     position: relative;
     box-shadow: -5px 0px 15px var(--color-primary);
-    transition: all 0.3s ease-in-out;
 
     li {
       display: flex;

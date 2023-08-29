@@ -9,5 +9,5 @@ export const isMobile = (): boolean => {
     return false;
   }
 
-  return window.innerWidth < 768;
+  return window.innerWidth < 1200;
 };
