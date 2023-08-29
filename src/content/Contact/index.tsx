@@ -104,8 +104,8 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className={`page-container ${styles.wrapper}`}>
-      {renderContent()}
+    <div id="contact" className={`page-container ${styles.container}`}>
+      <div className={styles.contentWrapper}>{renderContent()}</div>
     </div>
   );
 };
