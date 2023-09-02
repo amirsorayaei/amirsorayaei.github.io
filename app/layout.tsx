@@ -17,7 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <title>Amir Sorayaei</title>
       <head>
         {/* Google tag (gtag.js) */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-PTDXQBB1BC" />
