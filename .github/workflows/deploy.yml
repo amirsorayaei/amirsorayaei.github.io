@@ -25,7 +25,10 @@ jobs:
           node-version: 22
           cache: npm
 
+      # OG cards are committed, so the deploy needs no browser.
       - run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
 
       # Nothing ships that cannot be defended in an interview.
       - name: Validate claims

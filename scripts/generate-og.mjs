@@ -7,10 +7,13 @@
  * where it means something. A share card that looks like a different brand
  * than the page it opens is a broken promise before the visitor arrives.
  *
- * Static export has no runtime, so these are produced at build time and shipped
- * as files. Run after `next build`, because it reads the compiled font.
+ * Static export has no runtime, so these are produced ahead of time and shipped
+ * as files. They are committed, and Next copies public/ into the export, so the
+ * deploy never needs a browser. Run this by hand when the copy changes.
  *
- * Usage: node scripts/generate-og.mjs
+ * Reads the compiled font, so run `next build` first.
+ *
+ * Usage: npm run og
  */
 import { readdir, readFile, mkdir, cp, access } from "node:fs/promises";
 import { join } from "node:path";
@@ -140,7 +143,10 @@ const card = ({ eyebrow, title, foot }) => `<!doctype html>
 </body>`;
 
 await mkdir(OUT_DIR, { recursive: true });
-const browser = await puppeteer.launch({ headless: "new" });
+const browser = await puppeteer.launch({
+  headless: "new",
+  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+});
 const page = await browser.newPage();
 await page.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
 
