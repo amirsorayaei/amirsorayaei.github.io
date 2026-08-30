@@ -92,7 +92,7 @@ export const engagements: Engagement[] = [
   {
     id: "app",
     shortName: "A.P.P",
-    mark: null,
+    mark: "/marks/top-menu.png",
     company: "A.P.P Software Solutions",
     role: "Lead Front-End Developer",
     url: null,
