@@ -148,9 +148,7 @@ export default function Home() {
                 <p className="text-base leading-relaxed text-muted-foreground">
                   {cap.detail}
                 </p>
-                <p className="annotation !tracking-[0.1em] leading-relaxed">
-                  {cap.tools.join("  ·  ")}
-                </p>
+                <p className="note">{cap.tools.join("  ·  ")}</p>
               </dd>
             </div>
           ))}
@@ -173,11 +171,9 @@ export default function Home() {
                 {para}
               </p>
             ))}
-            <p className="border-t border-line-soft pt-5 text-sm text-muted-foreground">
+            <p className="max-w-[66ch] border-t border-line-soft pt-5 text-sm leading-relaxed text-muted-foreground">
               {attributed.levitaPublic.display}.{" "}
-              <span className="annotation">
-                {attributed.levitaPublic.scopeNote}
-              </span>
+              <span className="note">{attributed.levitaPublic.scopeNote}</span>
             </p>
           </div>
         </div>
@@ -214,10 +210,10 @@ export default function Home() {
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-line-soft py-8">
-        <p className="annotation">
+        <p className="note">
           {site.name} · {site.title}
         </p>
-        <p className="annotation">
+        <p className="note">
           Every number on this site is defended in an interview
         </p>
       </footer>

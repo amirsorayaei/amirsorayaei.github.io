@@ -272,7 +272,9 @@
   }
 
   /* Drawing-sheet lettering: the annotation voice. Narrow, tracked, small.
-     Used for field labels in a title block, never as a kicker above a heading. */
+     Field labels in a title block only, never as a kicker above a heading, and
+     never for a sentence. Uppercase strips the word shapes we read by, and it
+     also corrupts names that carry meaningful case: Next.js, GTmetrix, RBAC. */
   .annotation {
     font-stretch: 82%;
     font-weight: 500;
@@ -280,6 +282,17 @@
     text-transform: uppercase;
     font-size: 0.6875rem;
     line-height: 1.25;
+    color: var(--muted-foreground);
+  }
+
+  /* The same small voice, for content rather than labels. Sentence case, so
+     product names keep their real spelling and a wrapped line stays readable. */
+  .note {
+    font-stretch: 88%;
+    letter-spacing: 0.015em;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    max-width: 60ch;
     color: var(--muted-foreground);
   }
 

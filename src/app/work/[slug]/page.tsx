@@ -39,9 +39,9 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section aria-labelledby={id} className="pb-16">
+    <section aria-labelledby={id} className="pb-12">
       <div className="measure" />
-      <div className="grid gap-8 pt-10 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
+      <div className="grid gap-8 pt-16 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
         <h2
           id={id}
           className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
@@ -83,7 +83,7 @@ export default async function CaseStudyPage({
       <header className="flex items-center justify-between gap-6 py-6">
         <Link
           href="/"
-          className="annotation inline-flex items-center gap-2 transition-colors hover:text-foreground"
+          className="annotation -m-2 inline-flex items-center gap-2 p-2 transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-3.5" aria-hidden />
           {site.name}
@@ -145,9 +145,7 @@ export default async function CaseStudyPage({
             </div>
             <div>
               <dt className="annotation">Built with</dt>
-              <dd className="annotation mt-1 !tracking-[0.1em] leading-relaxed">
-                {study.stack.join("  ·  ")}
-              </dd>
+              <dd className="note mt-1">{study.stack.join("  ·  ")}</dd>
             </div>
           </dl>
         </aside>
@@ -165,7 +163,7 @@ export default async function CaseStudyPage({
               className="object-cover"
             />
           </div>
-          <figcaption className="annotation">{study.hero.credit}</figcaption>
+          <figcaption className="note">{study.hero.credit}</figcaption>
         </figure>
       ) : null}
 
@@ -193,10 +191,10 @@ export default async function CaseStudyPage({
       <Section id="decisions" heading="What I decided, and what I ruled out">
         <div className="flex flex-col gap-10">
           {study.decisions.map((d) => (
-            <div key={d.choice} className="flex max-w-[70ch] flex-col gap-3">
+            <div key={d.choice} className="flex max-w-[64ch] flex-col gap-3">
               <p className="text-lg font-medium leading-relaxed">{d.choice}</p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                <span className="annotation mr-2">Instead of</span>
+                <span className="annotation mr-2">Instead of</span>{" "}
                 {d.insteadOf}
               </p>
               <p className="text-base leading-relaxed">{d.because}</p>
@@ -220,23 +218,25 @@ export default async function CaseStudyPage({
             {study.wentWrong.fix}
           </p>
           <p className="max-w-[68ch] border-t border-line-soft pt-5 text-base leading-relaxed text-muted-foreground">
-            <span className="annotation mr-2">Confirmed by</span>
+            <span className="annotation mr-2">Confirmed by</span>{" "}
             {study.wentWrong.confirmed}
           </p>
         </Section>
       ) : null}
 
       <Section id="outcome" heading="What changed">
-        <ul className="flex max-w-[70ch] flex-col gap-6">
+        <ul className="flex max-w-[66ch] flex-col gap-6">
           {study.outcomes.map((o) => (
             <li key={o.id} className="flex flex-col gap-1.5">
               <p className="text-lg leading-relaxed">{o.display}.</p>
-              <p className="annotation">
-                {"measuredBy" in o ? `${o.measuredBy} · ` : ""}
-                {evidenceLabel[o.evidence]}
+              <p className="note">
+                {"measuredBy" in o ? `${o.measuredBy} ` : ""}
+                <span className="annotation ml-1">
+                  {evidenceLabel[o.evidence]}
+                </span>
               </p>
               {o.scopeNote ? (
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
                   {o.scopeNote}
                 </p>
               ) : null}

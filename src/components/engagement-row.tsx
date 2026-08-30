@@ -127,7 +127,7 @@ export function EngagementRow({
                 </p>
               </div>
               {note.scopeNote ? (
-                <p className="pl-7 text-sm text-muted-foreground">
+                <p className="max-w-[62ch] pl-7 text-sm leading-relaxed text-muted-foreground">
                   {note.scopeNote}
                 </p>
               ) : null}
@@ -139,13 +139,16 @@ export function EngagementRow({
         {context.length > 0 ? (
           <ul className="flex max-w-[68ch] flex-col gap-2 border-t border-line-soft pt-5">
             {context.map((c) => (
-              <li key={c.id} className="text-sm text-muted-foreground">
+              <li
+                key={c.id}
+                className="max-w-[66ch] text-sm leading-relaxed text-muted-foreground"
+              >
                 {c.display}.{" "}
                 <span className="annotation whitespace-nowrap">
                   {evidenceLabel[c.evidence]}
                 </span>
                 {c.scopeNote ? (
-                  <span className="block text-muted-foreground/85">
+                  <span className="mt-0.5 block max-w-[62ch] text-muted-foreground/85">
                     {c.scopeNote}
                   </span>
                 ) : null}
@@ -160,11 +163,16 @@ export function EngagementRow({
           <p className="text-base leading-relaxed text-foreground">
             {headline.display}.
           </p>
-          <p className="annotation">
-            {headline.measuredBy} · {evidenceLabel[headline.evidence]}
+          <p className="note">
+            {headline.measuredBy}{" "}
+            <span className="annotation ml-1">
+              {evidenceLabel[headline.evidence]}
+            </span>
           </p>
           {headline.scopeNote ? (
-            <p className="text-sm text-muted-foreground">{headline.scopeNote}</p>
+            <p className="max-w-[62ch] text-sm leading-relaxed text-muted-foreground">
+              {headline.scopeNote}
+            </p>
           ) : null}
         </div>
 

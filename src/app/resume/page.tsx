@@ -24,7 +24,7 @@ export default function ResumePage() {
       <header className="flex items-center justify-between gap-6 py-6 print:hidden">
         <Link
           href="/"
-          className="annotation inline-flex items-center gap-2 transition-colors hover:text-foreground"
+          className="annotation -m-2 inline-flex items-center gap-2 p-2 transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-3.5" aria-hidden />
           {site.name}
@@ -33,7 +33,7 @@ export default function ResumePage() {
           <ThemeToggle />
           <a
             href={site.resumePdf}
-            className="annotation inline-flex items-center gap-2 border border-line px-3 py-1.5 transition-colors hover:border-signal hover:text-signal"
+            className="annotation inline-flex items-center gap-2 border border-line px-3 py-2.5 transition-colors hover:border-signal hover:text-signal"
           >
             <Download className="size-3.5" aria-hidden />
             PDF
@@ -43,7 +43,7 @@ export default function ResumePage() {
 
       <div className="measure print:hidden" />
 
-      <article className="flex flex-col gap-12 py-14 print:py-0">
+      <article className="flex max-w-[46rem] flex-col gap-12 py-14 print:max-w-none print:py-0">
         {/* identity */}
         <div className="flex flex-col gap-5">
           <div>
@@ -56,7 +56,7 @@ export default function ResumePage() {
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <a
               href={`mailto:${site.email}`}
-              className="underline-offset-[0.28em] hover:underline"
+              className="-my-1 py-1 underline-offset-[0.28em] hover:underline"
             >
               {site.email}
             </a>
@@ -64,7 +64,7 @@ export default function ResumePage() {
               href={site.linkedin}
               target="_blank"
               rel="noreferrer noopener"
-              className="underline-offset-[0.28em] hover:underline"
+              className="-my-1 py-1 underline-offset-[0.28em] hover:underline"
             >
               linkedin.com/in/amir-sorayaei
             </a>
@@ -72,7 +72,7 @@ export default function ResumePage() {
               href={site.github}
               target="_blank"
               rel="noreferrer noopener"
-              className="underline-offset-[0.28em] hover:underline"
+              className="-my-1 py-1 underline-offset-[0.28em] hover:underline"
             >
               github.com/amirsorayaei
             </a>
@@ -115,7 +115,7 @@ export default function ResumePage() {
                       className="mt-[0.7em] h-px w-3 shrink-0 bg-line"
                       aria-hidden
                     />
-                    <p className="text-base leading-relaxed">{b.display}.</p>
+                    <p className="max-w-[64ch] text-base leading-relaxed">{b.display}.</p>
                   </li>
                 ))}
                 <li className="flex gap-3">
@@ -123,7 +123,7 @@ export default function ResumePage() {
                     className="mt-[0.7em] h-px w-3 shrink-0 bg-line"
                     aria-hidden
                   />
-                  <p className="text-base leading-relaxed">
+                  <p className="max-w-[64ch] text-base leading-relaxed">
                     {e.headline.display}.
                   </p>
                 </li>
