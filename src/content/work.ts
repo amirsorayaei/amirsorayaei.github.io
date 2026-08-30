@@ -12,8 +12,8 @@ export type Engagement = {
   company: string;
   /** Fits inside a narrow segment of the career run. */
   shortName: string;
-  /** Band captured from the company's own public site. Null when none exists. */
-  banner: string | null;
+  /** The company's own square mark. Null when none exists. */
+  mark: string | null;
   role: string;
   /** The company's public site. Null when none exists. */
   url: string | null;
@@ -38,7 +38,7 @@ export const engagements: Engagement[] = [
   {
     id: "levita",
     shortName: "Levita",
-    banner: "/banners/levita.png",
+    mark: "/marks/levita.png",
     company: "Levita Health",
     role: "Senior Full-Stack Developer",
     url: "https://levitamed.com",
@@ -63,7 +63,7 @@ export const engagements: Engagement[] = [
   {
     id: "roomvu",
     shortName: "Roomvu",
-    banner: null,
+    mark: "/marks/roomvu.png",
     company: "Roomvu",
     role: "Senior Front-End Developer",
     url: "https://www.roomvu.com",
@@ -92,7 +92,7 @@ export const engagements: Engagement[] = [
   {
     id: "app",
     shortName: "A.P.P",
-    banner: null,
+    mark: null,
     company: "A.P.P Software Solutions",
     role: "Lead Front-End Developer",
     url: null,
@@ -119,14 +119,14 @@ export const engagements: Engagement[] = [
       {
         slug: "ecatalog",
         title: "Setting the architecture, then handing it over",
-        url: "https://ecatalog.top/platform",
+        url: null,
       },
     ],
   },
   {
     id: "hoomaan",
     shortName: "Hoomaan",
-    banner: null,
+    mark: null,
     company: "Hoomaan",
     role: "Front-End Developer",
     url: null,

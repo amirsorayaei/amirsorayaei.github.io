@@ -340,8 +340,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "ecatalog",
     company: "A.P.P Software Solutions",
-    url: "https://ecatalog.top/platform",
-    urlVerified: true,
+    url: null,
+    urlVerified: false,
     title: "Setting the architecture, then handing it over",
     role: "Lead Front-End Developer",
     dates: "Sep 2020 to Sep 2023",
