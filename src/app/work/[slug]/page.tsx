@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 import { FlowDiagram } from "@/components/flow-diagram";
@@ -151,6 +152,22 @@ export default async function CaseStudyPage({
           </dl>
         </aside>
       </section>
+
+      {study.hero ? (
+        <figure className="flex flex-col gap-3 pb-16">
+          <div className="relative aspect-[16/9] w-full overflow-hidden border border-line-soft">
+            <Image
+              src={study.hero.src}
+              alt={study.hero.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 84rem"
+              priority
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="annotation">{study.hero.credit}</figcaption>
+        </figure>
+      ) : null}
 
       <Section id="before" heading="What was there before">
         <Prose paragraphs={study.before} />

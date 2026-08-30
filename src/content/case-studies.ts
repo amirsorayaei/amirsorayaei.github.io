@@ -45,6 +45,11 @@ export type CaseStudy = {
   team: string;
   /** One line. What a reviewer takes away if they read nothing else. */
   standfirst: string;
+  /**
+   * The company's own published marketing image. Theirs, not his, so it is
+   * always credited. Null where the company published nothing usable.
+   */
+  hero: { src: string; alt: string; credit: string } | null;
   /** What existed, and what was broken, when he arrived. */
   before: string[];
   /** What he owned, and explicitly what he did not. */
@@ -71,6 +76,11 @@ export const caseStudies: CaseStudy[] = [
     team: "Primary owner across the Levita repositories, after the previous developer moved to another product",
     standfirst:
       "Two unfinished applications, consultations happening on Google Meet, and payment arranged privately between doctor and patient. Nine months later all of it ran inside the product.",
+    hero: {
+      src: "/case/levita-hero.webp",
+      alt: "A doctor consulting at a laptop, from Levita's public site",
+      credit: "Levita's own marketing photography, from levitamed.com",
+    },
     before: [
       "The patient and doctor applications existed but were incomplete. The previous developer handed the project over and moved to another product, and I became the primary owner across the repositories.",
       "There was no admin portal at all. Clinic and pharmacy were ideas rather than working products.",
@@ -168,6 +178,11 @@ export const caseStudies: CaseStudy[] = [
     team: "Dedicated frontend team went from three engineers to two, then to one",
     standfirst:
       "Traffic to the campaign page was steady. Subscriptions from it were not. The problem turned out to be the part of the page nobody was measuring.",
+    hero: {
+      src: "/case/roomvu-hero.webp",
+      alt: "Roomvu's product: agent listing videos, lead list, and social publishing",
+      credit: "Roomvu's own product marketing image, from roomvu.com",
+    },
     before: [
       "Listing Videos let an agent turn a property listing into a branded video and schedule it out to their social channels. It was a paid feature, so the sample a free user could edit and preview but not share was the thing that had to sell the subscription.",
       "Sample videos went out through email campaigns to free users, landing them on one campaign page. Visitor volume to that page was stable. The number of people who clicked subscribe was not what it should have been.",
@@ -264,6 +279,7 @@ export const caseStudies: CaseStudy[] = [
     team: "Rotating team of 4 to 5 developers",
     standfirst:
       "A digital menu a diner opens at the table has one job, and it has to do it before they put the phone down. Ours took about two seconds and shipped four megabytes to do it.",
+    hero: null,
     before: [
       "I built Top Menu's frontend from zero and kept primary ownership of it. It went on to serve more than 400 restaurants on renewable annual subscriptions, with real ordering and real support.",
       "As it grew, the whole application shipped as one bundle of roughly 4MB, and the initial load sat at about two seconds. The person waiting is standing in a restaurant holding their own phone on somebody else's wifi.",
@@ -349,6 +365,7 @@ export const caseStudies: CaseStudy[] = [
     team: "Started with one other developer, then the wider team",
     standfirst:
       "This one is short, because my part of it was short. I set the shape and then other people built it.",
+    hero: null,
     before: [
       "eCatalog was the second product, doing for product catalogues what Top Menu did for restaurant menus, and sold the same way: renewable annual subscriptions with support.",
       "It started from nothing, alongside a Top Menu codebase that had already taught us which early decisions get expensive.",
