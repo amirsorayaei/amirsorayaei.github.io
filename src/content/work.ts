@@ -25,8 +25,10 @@ export type Engagement = {
   brief: string;
   /** The one measured change this engagement is remembered by. */
   headline: Delta;
-  /** Supporting facts shown on the landing card. Kept to two. */
-  notes: Claim[];
+  /** What he made here. This leads the row. */
+  built: Claim[];
+  /** Scale and team facts. Context for the work, never billed as his output. */
+  context: Claim[];
   caseStudies: CaseStudyLink[];
 };
 
@@ -45,7 +47,8 @@ export const engagements: Engagement[] = [
     brief:
       "Telemedicine for Albania. A patient picks a doctor by specialty or symptom, pays, and meets them on video inside the product. Prescriptions and lab results land back in their account afterwards.",
     headline: deltas.levitaRegistration,
-    notes: [claims.levitaOwnership, claims.levitaConsultation],
+    built: [claims.levitaOwnership, claims.levitaConsultation],
+    context: [claims.levitaScale],
     caseStudies: [
       {
         slug: "levita-health",
@@ -68,7 +71,12 @@ export const engagements: Engagement[] = [
     brief:
       "Real-estate marketing on subscription. An agent turns a property listing into a branded video and schedules it out to their social channels without leaving the platform.",
     headline: deltas.roomvuSubscribe,
-    notes: [claims.roomvuPlatform, claims.roomvuSoleFrontend],
+    built: [
+      claims.roomvuListingVideos,
+      claims.roomvuPackages,
+      claims.roomvuSoleFrontend,
+    ],
+    context: [claims.roomvuPlatform],
     caseStudies: [
       {
         slug: "roomvu",
@@ -91,7 +99,12 @@ export const engagements: Engagement[] = [
     brief:
       "Two subscription products for local businesses. Top Menu put restaurant menus and ordering on a phone. eCatalog did the same for product catalogues. Both sold on renewable annual plans with support.",
     headline: deltas.topMenuLoad,
-    notes: [claims.topMenuVisits, claims.appTeam],
+    built: [
+      claims.topMenuFromZero,
+      claims.ecatalogArchitecture,
+      claims.appTeam,
+    ],
+    context: [claims.topMenuCustomers, claims.topMenuVisits],
     caseStudies: [
       {
         slug: "top-menu",
@@ -119,7 +132,8 @@ export const engagements: Engagement[] = [
     brief:
       "A digital agency. A new client application roughly every two months, taken from first commit through release and support.",
     headline: deltas.hoomaanSetup,
-    notes: [claims.hoomaanEcosystem],
+    built: [claims.hoomaanEcosystem],
+    context: [],
     caseStudies: [],
   },
 ];

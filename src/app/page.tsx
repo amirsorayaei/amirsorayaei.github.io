@@ -63,11 +63,7 @@ export default function Home() {
             </div>
             <div>
               <dt className="annotation">Status</dt>
-              <dd className="mt-1 flex items-baseline gap-2 text-xl font-medium text-signal">
-                <span
-                  className="size-2 shrink-0 translate-y-[-0.15em] rounded-full bg-signal"
-                  aria-hidden
-                />
+              <dd className="mt-1 text-base text-muted-foreground">
                 {site.availability}
               </dd>
             </div>

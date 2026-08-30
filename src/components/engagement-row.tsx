@@ -30,7 +30,8 @@ export function EngagementRow({
     mode,
     brief,
     headline,
-    notes,
+    built,
+    context,
     caseStudies,
   } = engagement;
 
@@ -100,21 +101,21 @@ export function EngagementRow({
           <p className="text-base text-muted-foreground">{role}</p>
         </header>
 
-        <p className="max-w-[68ch] text-lg leading-relaxed text-foreground">
+        {/* What the company does. Context, not his work, so it sits quieter. */}
+        <p className="max-w-[68ch] text-base leading-relaxed text-muted-foreground">
           {brief}
         </p>
 
-        <DeltaRule delta={headline} className="max-w-[46rem]" />
-
-        <ul className="flex max-w-[68ch] flex-col gap-3">
-          {notes.map((note) => (
-            <li key={note.id} className="flex flex-col gap-1">
+        {/* What he built. This leads. */}
+        <ul className="flex max-w-[68ch] flex-col gap-5">
+          {built.map((note) => (
+            <li key={note.id} className="flex flex-col gap-1.5">
               <div className="flex gap-3">
                 <span
-                  className="mt-[0.6em] h-px w-4 shrink-0 bg-line"
+                  className="mt-[0.7em] h-px w-4 shrink-0 bg-line"
                   aria-hidden
                 />
-                <p className="text-base leading-relaxed text-muted-foreground">
+                <p className="text-lg leading-relaxed text-foreground">
                   {note.display}.{" "}
                   <span className="annotation whitespace-nowrap">
                     {evidenceLabel[note.evidence]}
@@ -122,13 +123,38 @@ export function EngagementRow({
                 </p>
               </div>
               {note.scopeNote ? (
-                <p className="pl-7 text-sm text-muted-foreground/80">
+                <p className="pl-7 text-sm text-muted-foreground">
                   {note.scopeNote}
                 </p>
               ) : null}
             </li>
           ))}
         </ul>
+
+        {/* Scale the work sat inside. Never billed as his own output. */}
+        {context.length > 0 ? (
+          <ul className="flex max-w-[68ch] flex-col gap-2 border-t border-line-soft pt-5">
+            {context.map((c) => (
+              <li key={c.id} className="text-sm text-muted-foreground">
+                {c.display}.{" "}
+                <span className="annotation whitespace-nowrap">
+                  {evidenceLabel[c.evidence]}
+                </span>
+                {c.scopeNote ? (
+                  <span className="block text-muted-foreground/85">
+                    {c.scopeNote}
+                  </span>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {/* And then what changed because of it. Evidence, not headline. */}
+        <DeltaRule
+          delta={headline}
+          className="max-w-[42rem] border-t border-line-soft pt-7"
+        />
 
         {caseStudies.length > 0 ? (
           <div className="flex flex-wrap gap-x-8 gap-y-3 pt-1">

@@ -181,6 +181,37 @@ export const claims = {
       "The team's only dedicated frontend engineer for the final eight months",
     source: "Roomvu context and ownership.",
   },
+  roomvuListingVideos: {
+    id: "roomvu-listing-videos",
+    evidence: "confirmed",
+    display:
+      "Owned the end-to-end frontend of the Listing Videos experience, so agents could customize, preview, schedule, and publish branded property videos across major social channels",
+    scopeNote:
+      "Frontend ownership. Backend and product outcomes stayed team work.",
+    source: "Roomvu Listing Videos product scope.",
+  },
+  roomvuPackages: {
+    id: "roomvu-packages",
+    evidence: "confirmed",
+    display:
+      "Extracted reusable video players into independently versioned NPM packages and enforced the supported APIs through TypeScript and ESLint rules, so updates landed in one place instead of being forked per team",
+    source: "Roomvu media architecture and consistency.",
+  },
+  topMenuFromZero: {
+    id: "topmenu-from-zero",
+    evidence: "confirmed",
+    display:
+      "Built Top Menu's frontend from zero and kept primary ownership of it, through real ordering workflows and renewable annual subscriptions",
+    source: "A.P.P context and ownership.",
+  },
+  ecatalogArchitecture: {
+    id: "ecatalog-architecture",
+    evidence: "confirmed",
+    display:
+      "Set up eCatalog's initial frontend architecture with another developer, then guided delivery as implementation moved to the team",
+    scopeNote: "Architecture and guidance. The implementation was not all his.",
+    source: "A.P.P context and ownership.",
+  },
   topMenuCustomers: {
     id: "topmenu-customers",
     evidence: "approximate",
