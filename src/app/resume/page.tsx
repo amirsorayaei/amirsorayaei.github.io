@@ -8,6 +8,10 @@ import { site, education, languages, capabilities } from "@/content/site";
 export const metadata: Metadata = {
   title: "Resume",
   description: `${site.name}, ${site.title}. Seven years across telemedicine, real-estate SaaS, and restaurant commerce.`,
+  openGraph: {
+    images: [{ url: "/og/resume.png", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og/resume.png"] },
 };
 
 /**

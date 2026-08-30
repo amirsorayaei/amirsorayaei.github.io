@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/generate-og.mjs",
     "start": "next start",
     "lint": "eslint",
-    "validate": "node scripts/validate-claims.mjs"
+    "validate": "node scripts/validate-claims.mjs",
+    "og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

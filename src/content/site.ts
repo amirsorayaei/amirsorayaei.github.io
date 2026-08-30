@@ -16,7 +16,13 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/amir-sorayaei",
   github: "https://github.com/amirsorayaei",
   resumePdf: "/AmirSorayaei-Resume.pdf",
-  url: "https://amirsorayaei.com",
+  /**
+   * Where the site actually answers today. Open Graph images are absolute URLs
+   * built from this, so pointing it at a domain that does not resolve yet gives
+   * every share a broken preview. Set NEXT_PUBLIC_SITE_URL to
+   * https://amirsorayaei.com once that custom domain is attached in Pages.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://amirsorayaei.github.io",
 } as const;
 
 /**
