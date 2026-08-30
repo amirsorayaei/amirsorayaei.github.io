@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { CompanyBanner } from "@/components/company-banner";
 import { evidenceLabel } from "@/content/claims";
 import type { Engagement } from "@/content/work";
 
@@ -28,6 +29,7 @@ export function EngagementRow({
     location,
     mode,
     brief,
+    banner,
     headline,
     built,
     context,
@@ -77,6 +79,8 @@ export function EngagementRow({
 
       {/* the work */}
       <div className="flex flex-col gap-7">
+        {banner ? <CompanyBanner src={banner} company={company} /> : null}
+
         <header className="flex flex-col gap-2">
           <h3 className="text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
             {url ? (
