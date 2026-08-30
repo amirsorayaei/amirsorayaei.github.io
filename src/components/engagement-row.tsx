@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { DeltaRule } from "@/components/delta-rule";
 import { evidenceLabel } from "@/content/claims";
 import type { Engagement } from "@/content/work";
 
@@ -150,11 +149,19 @@ export function EngagementRow({
           </ul>
         ) : null}
 
-        {/* And then what changed because of it. Evidence, not headline. */}
-        <DeltaRule
-          delta={headline}
-          className="max-w-[42rem] border-t border-line-soft pt-7"
-        />
+        {/* And then what changed because of it, in words. A chart here would
+            invite comparison across engagements that do not share a scale. */}
+        <div className="flex max-w-[68ch] flex-col gap-1.5 border-t border-line-soft pt-6">
+          <p className="text-base leading-relaxed text-foreground">
+            {headline.display}.
+          </p>
+          <p className="annotation">
+            {headline.measuredBy} · {evidenceLabel[headline.evidence]}
+          </p>
+          {headline.scopeNote ? (
+            <p className="text-sm text-muted-foreground">{headline.scopeNote}</p>
+          ) : null}
+        </div>
 
         {caseStudies.length > 0 ? (
           <div className="flex flex-wrap gap-x-8 gap-y-3 pt-1">

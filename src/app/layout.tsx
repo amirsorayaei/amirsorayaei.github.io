@@ -39,7 +39,8 @@ const CONTRACT = `<!--
   hero-metric template of a big number with a small label.
   OWN-WORLD: two real diazo print processes. Whiteprint is ferro-blue line work
   on pale ozalid paper; blueprint is chalk line work on saturated ferro blue.
-  Survey orange appears only on an "after" state, so colour means improvement.
+  Survey orange is reserved for the one action the page wants and for movement
+  off the page, so it never decorates and never dramatises a number.
   Archivo at three widths, dimension figures set expanded, annotations narrow
   and tracked. Ruled sheet, hairline measures with tick extensions, no cards.
   STORY: a hiring manager sees one defended number before any prose, reads four
