@@ -34,6 +34,8 @@ export type Claim = {
 
 /** A claim with a measured before and after. Drawn to true scale. */
 export type Delta = Claim & {
+  /** What was measured. Without this a before and after is just a number. */
+  subject: string;
   before: number;
   after: number;
   unit: string;
@@ -47,6 +49,7 @@ export type Delta = Claim & {
 export const deltas = {
   levitaRegistration: {
     id: "levita-registration-conversion",
+    subject: "Patients who finished registering",
     evidence: "confirmed",
     display:
       "Raised conversion through the main patient-registration step from below 10% to above 40% over 1 to 2 months",
@@ -61,6 +64,7 @@ export const deltas = {
   },
   levitaDocumentation: {
     id: "levita-documentation-time",
+    subject: "Doctor time per consultation write-up",
     evidence: "approximate",
     display:
       "Cut the post-consultation documentation workflow from roughly 15 minutes to under 5",
@@ -77,6 +81,7 @@ export const deltas = {
   },
   roomvuSubscribe: {
     id: "roomvu-subscribe-conversion",
+    subject: "Subscribes from the campaign page",
     evidence: "confirmed",
     display:
       "Increased subscribe conversion by approximately 30%, measured through Metabase funnels",
@@ -93,6 +98,7 @@ export const deltas = {
   },
   roomvuGtmetrix: {
     id: "roomvu-gtmetrix",
+    subject: "GTmetrix score on underperforming pages",
     evidence: "approximate",
     display:
       "Raised GTmetrix scores from roughly 65 to 85 to 90 on underperforming pages",
@@ -107,6 +113,7 @@ export const deltas = {
   },
   topMenuLoad: {
     id: "topmenu-initial-load",
+    subject: "Top Menu initial page load",
     evidence: "approximate",
     display:
       "Cut initial load from about 2 seconds to under 1 second by splitting a 4MB bundle into route-level chunks",
@@ -121,6 +128,7 @@ export const deltas = {
   },
   hoomaanSetup: {
     id: "hoomaan-project-setup",
+    subject: "Setup time for a new client project",
     evidence: "approximate",
     display: "Reduced new-project setup from 4 to 5 days to about one day",
     source: "Metrics ledger, Hoomaan, row 2. Reusable boilerplate.",

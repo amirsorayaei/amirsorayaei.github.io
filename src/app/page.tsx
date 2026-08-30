@@ -1,8 +1,8 @@
 import { Mail, ArrowUpRight, Download } from "lucide-react";
-import { DeltaRule } from "@/components/delta-rule";
+import { CareerRun } from "@/components/career-run";
 import { EngagementRow } from "@/components/engagement-row";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { deltas, attributed } from "@/content/claims";
+import { attributed } from "@/content/claims";
 import { engagements } from "@/content/work";
 import { site, thesis, capabilities, about } from "@/content/site";
 
@@ -29,24 +29,19 @@ export default function Home() {
 
       <div className="measure" />
 
-      {/* --- hero: a measurement, not an introduction --------------------- */}
+      {/* --- hero: who he is, and the career drawn to scale ---------------- */}
       <section className="grid gap-10 pt-14 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16 lg:pt-20 lg:pb-24">
         <div className="flex flex-col justify-between gap-12">
           <div className="flex flex-col gap-7">
-            <h1 className="max-w-[19ch] text-[clamp(2.5rem,6.2vw,5rem)] font-semibold leading-[0.92] tracking-[-0.045em]">
-              Most people who started registering at Levita never finished.
+            <h1 className="max-w-[16ch] text-[clamp(2.75rem,6.8vw,5rem)] font-semibold leading-[0.92] tracking-[-0.045em]">
+              I build the product, then I find out if it worked.
             </h1>
             <p className="max-w-[58ch] text-lg leading-relaxed text-muted-foreground sm:text-xl">
               {thesis}
             </p>
           </div>
 
-          <DeltaRule
-            delta={deltas.levitaRegistration}
-            size="hero"
-            animate
-            className="max-w-[52rem]"
-          />
+          <CareerRun />
         </div>
 
         {/* margin annotations: the drawing sheet's title block */}

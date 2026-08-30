@@ -43,6 +43,16 @@ export function DeltaRule({
 
   return (
     <figure className={cn("w-full", className)}>
+      {/* What was measured. A before and after without this is just a number. */}
+      <p
+        className={cn(
+          "mb-4 text-foreground",
+          isHero ? "text-lg sm:text-xl" : "text-base",
+        )}
+      >
+        {delta.subject}
+      </p>
+
       <div
         className={cn(
           "relative w-full",

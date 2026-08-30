@@ -10,6 +10,8 @@ export type CaseStudyLink = {
 export type Engagement = {
   id: string;
   company: string;
+  /** Fits inside a narrow segment of the career run. */
+  shortName: string;
   role: string;
   /** The company's public site. Null when none exists. */
   url: string | null;
@@ -31,6 +33,7 @@ export type Engagement = {
 export const engagements: Engagement[] = [
   {
     id: "levita",
+    shortName: "Levita",
     company: "Levita Health",
     role: "Senior Full-Stack Developer",
     url: "https://levitamed.com",
@@ -53,6 +56,7 @@ export const engagements: Engagement[] = [
   },
   {
     id: "roomvu",
+    shortName: "Roomvu",
     company: "Roomvu",
     role: "Senior Front-End Developer",
     url: "https://www.roomvu.com",
@@ -75,6 +79,7 @@ export const engagements: Engagement[] = [
   },
   {
     id: "app",
+    shortName: "A.P.P",
     company: "A.P.P Software Solutions",
     role: "Lead Front-End Developer",
     url: null,
@@ -102,6 +107,7 @@ export const engagements: Engagement[] = [
   },
   {
     id: "hoomaan",
+    shortName: "Hoomaan",
     company: "Hoomaan",
     role: "Front-End Developer",
     url: null,
