@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   BEFORE / AFTER — the diazo world.
+
+   Two real print processes, not a light switch:
+     whiteprint (light) — ferro-blue line work on pale ozalid paper
+     blueprint  (dark)  — chalk line work on saturated ferro blue
+
+   Survey orange is the only warm colour on the site and it is reserved,
+   without exception, for the "after" state. Colour means improvement.
+--------------------------------------------------------------------------- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-archivo);
+  --font-heading: var(--font-archivo);
+  --font-mono: var(--font-archivo);
+
+  /* world roles */
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-signal: var(--signal);
+  --color-signal-ink: var(--signal-ink);
+  --color-paper: var(--paper);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* --- whiteprint: diazo positive ----------------------------------------- */
+:root {
+  --paper: oklch(0.963 0.011 246);
+  --background: oklch(0.963 0.011 246);
+  --foreground: oklch(0.298 0.079 253);
+
+  --line: oklch(0.548 0.062 252);
+  --line-soft: oklch(0.548 0.062 252 / 26%);
+
+  --signal: oklch(0.632 0.181 47);
+  --signal-ink: oklch(0.508 0.163 45);
+
+  --card: oklch(0.982 0.008 246);
+  --card-foreground: oklch(0.298 0.079 253);
+  --popover: oklch(0.982 0.008 246);
+  --popover-foreground: oklch(0.298 0.079 253);
+
+  --primary: oklch(0.298 0.079 253);
+  --primary-foreground: oklch(0.975 0.009 246);
+  --secondary: oklch(0.918 0.019 247);
+  --secondary-foreground: oklch(0.298 0.079 253);
+  --muted: oklch(0.918 0.019 247);
+  --muted-foreground: oklch(0.472 0.055 252);
+  --accent: oklch(0.918 0.019 247);
+  --accent-foreground: oklch(0.298 0.079 253);
+  --destructive: oklch(0.523 0.192 27);
+
+  --border: oklch(0.548 0.062 252 / 30%);
+  --input: oklch(0.548 0.062 252 / 42%);
+  --ring: oklch(0.632 0.181 47);
+
+  --chart-1: oklch(0.298 0.079 253);
+  --chart-2: oklch(0.472 0.055 252);
+  --chart-3: oklch(0.548 0.062 252);
+  --chart-4: oklch(0.632 0.181 47);
+  --chart-5: oklch(0.508 0.163 45);
+
+  --radius: 0.125rem;
+
+  --sidebar: oklch(0.982 0.008 246);
+  --sidebar-foreground: oklch(0.298 0.079 253);
+  --sidebar-primary: oklch(0.298 0.079 253);
+  --sidebar-primary-foreground: oklch(0.975 0.009 246);
+  --sidebar-accent: oklch(0.918 0.019 247);
+  --sidebar-accent-foreground: oklch(0.298 0.079 253);
+  --sidebar-border: oklch(0.548 0.062 252 / 30%);
+  --sidebar-ring: oklch(0.632 0.181 47);
+
+  --grid-line: oklch(0.548 0.062 252 / 12%);
+  --grid-line-major: oklch(0.548 0.062 252 / 20%);
+}
+
+/* --- blueprint: diazo negative ------------------------------------------ */
+.dark {
+  --paper: oklch(0.276 0.073 253);
+  --background: oklch(0.276 0.073 253);
+  --foreground: oklch(0.945 0.014 242);
+
+  --line: oklch(0.606 0.052 250);
+  --line-soft: oklch(0.792 0.036 244 / 30%);
+
+  --signal: oklch(0.735 0.166 53);
+  --signal-ink: oklch(0.775 0.155 57);
+
+  --card: oklch(0.311 0.075 253);
+  --card-foreground: oklch(0.945 0.014 242);
+  --popover: oklch(0.311 0.075 253);
+  --popover-foreground: oklch(0.945 0.014 242);
+
+  --primary: oklch(0.945 0.014 242);
+  --primary-foreground: oklch(0.276 0.073 253);
+  --secondary: oklch(0.352 0.072 253);
+  --secondary-foreground: oklch(0.945 0.014 242);
+  --muted: oklch(0.352 0.072 253);
+  --muted-foreground: oklch(0.788 0.035 245);
+  --accent: oklch(0.352 0.072 253);
+  --accent-foreground: oklch(0.945 0.014 242);
+  --destructive: oklch(0.704 0.176 24);
+
+  --border: oklch(0.792 0.036 244 / 26%);
+  --input: oklch(0.792 0.036 244 / 34%);
+  --ring: oklch(0.735 0.166 53);
+
+  --chart-1: oklch(0.945 0.014 242);
+  --chart-2: oklch(0.788 0.035 245);
+  --chart-3: oklch(0.606 0.052 250);
+  --chart-4: oklch(0.735 0.166 53);
+  --chart-5: oklch(0.775 0.155 57);
+
+  --sidebar: oklch(0.311 0.075 253);
+  --sidebar-foreground: oklch(0.945 0.014 242);
+  --sidebar-primary: oklch(0.945 0.014 242);
+  --sidebar-primary-foreground: oklch(0.276 0.073 253);
+  --sidebar-accent: oklch(0.352 0.072 253);
+  --sidebar-accent-foreground: oklch(0.945 0.014 242);
+  --sidebar-border: oklch(0.792 0.036 244 / 26%);
+  --sidebar-ring: oklch(0.735 0.166 53);
+
+  --grid-line: oklch(0.792 0.036 244 / 10%);
+  --grid-line-major: oklch(0.792 0.036 244 / 17%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "ss01" 1;
+  }
+
+  /* The sheet is ruled. Two frequencies, like a real drawing sheet: a fine
+     10px field and a 80px major division that the layout measure sits on. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--grid-line-major) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line-major) 1px, transparent 1px),
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size:
+      80px 80px,
+      80px 80px,
+      10px 10px,
+      10px 10px;
+    mask-image: radial-gradient(ellipse 120% 90% at 50% 0%, black 0%, transparent 78%);
+  }
+
+  /* Browser surfaces belong to the design system too. */
+  ::selection {
+    background-color: var(--signal);
+    color: var(--paper);
+  }
+
+  :root {
+    caret-color: var(--signal);
+    accent-color: var(--signal);
+    scrollbar-color: var(--line) transparent;
+    scrollbar-width: thin;
+  }
+
+  a {
+    text-underline-offset: 0.28em;
+    text-decoration-thickness: from-font;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-soft);
+    border: 3px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--line);
+  }
+}
+
+@layer components {
+  /* The measure. Every horizontal division on the site is this one rule,
+     drawn like a dimension line: a hairline with tick extensions at each end. */
+  .measure {
+    position: relative;
+    height: 1px;
+    background: var(--line-soft);
+  }
+  .measure::before,
+  .measure::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 1px;
+    height: 9px;
+    background: var(--line);
+  }
+  .measure::before {
+    left: 0;
+  }
+  .measure::after {
+    right: 0;
+  }
+
+  /* Drawing-sheet lettering: the annotation voice. Narrow, tracked, small.
+     Used for field labels in a title block, never as a kicker above a heading. */
+  .annotation {
+    font-stretch: 82%;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    line-height: 1.25;
+    color: var(--muted-foreground);
+  }
+
+  /* Dimension figures: the numbers that sit on a measure line. */
+  .figure {
+    font-stretch: 112%;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    line-height: 0.86;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   The one authored moment: the hero measure draws itself once, on load.
+   Pure CSS, so it runs with JavaScript disabled and the reduced-motion rule
+   above lands it on its final state instantly.
+--------------------------------------------------------------------------- */
+@keyframes delta-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes delta-land {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -5px) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -5px) scale(1);
+  }
+}
+
+.delta-animate .delta-span {
+  animation: delta-draw 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delta-animate .delta-mark {
+  animation: delta-land 420ms cubic-bezier(0.16, 1, 0.3, 1) 900ms both;
+}
