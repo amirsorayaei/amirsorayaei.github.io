@@ -93,3 +93,14 @@ export const about = [
   "The part I care about is what happens after the deploy. It is easy to ship a redesign and call it an improvement. I would rather instrument the funnel first, change one thing, and find out. Sometimes the answer is that it did nothing.",
   "English is my second language. I read and write it comfortably and I work entirely in English, but I am upper-intermediate, not fluent, and I would rather say that here than have you find out on a call.",
 ];
+
+export const education = {
+  degree: "B.Sc. Computer Engineering",
+  school: "Shahrood University of Technology",
+  years: "2016 to 2020",
+} as const;
+
+export const languages = [
+  { name: "Persian", level: "Native" },
+  { name: "English", level: "Upper-Intermediate (B2)" },
+] as const;
