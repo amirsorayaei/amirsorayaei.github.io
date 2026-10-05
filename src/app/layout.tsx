@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { site, thesis } from "@/content/site";
 import "./globals.css";
@@ -59,6 +60,12 @@ const CONTRACT = `<!--
   provenance.
 -->`;
 
+/**
+ * Vercel Web Analytics only answers on Vercel deployments. The GitHub Pages
+ * build would request a script that does not exist there, so it ships without.
+ */
+const ON_VERCEL = process.env.VERCEL === "1";
+
 /** Applies the stored or system theme before first paint. */
 const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":!window.matchMedia("(prefers-color-scheme: light)").matches;document.documentElement.classList.toggle("dark",d);document.documentElement.style.colorScheme=d?"dark":"light";}catch(e){document.documentElement.classList.add("dark");}})();`;
 
@@ -77,6 +84,7 @@ export default function RootLayout({
       <body className="antialiased">
         <div hidden dangerouslySetInnerHTML={{ __html: CONTRACT }} />
         <TooltipProvider delayDuration={120}>{children}</TooltipProvider>
+        {ON_VERCEL && <Analytics />}
       </body>
     </html>
   );
