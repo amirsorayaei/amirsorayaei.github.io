@@ -10,7 +10,7 @@ web
 
 Next.js 16 App Router, TypeScript strict, `output: 'export'` (fully static). Tailwind CSS v4 with CSS-first `@theme` tokens. shadcn/ui components via CLI. Motion (Framer Motion 12) only where CSS cannot do the job. Local variable fonts via `next/font/local`.
 
-Confirmed with the owner. Production deploy is GitHub Pages at `amirsorayaei.com` via the repo's existing `CNAME`; a GitHub Actions Pages workflow must be added because the previous one was deleted in commit `696783c`, which is why the site currently 404s. Vercel is preview-only. No server runtime, so no API routes, no server actions, and no runtime image optimization.
+Confirmed with the owner. Production deploy is GitHub Pages at `amirsorayaei.github.io` via the GitHub Actions Pages workflow; there is no custom domain. Vercel serves the same build at `amirsorayaei-github-io.vercel.app` and carries Web Analytics. No server runtime, so no API routes, no server actions, and no runtime image optimization.
 
 ## Users
 

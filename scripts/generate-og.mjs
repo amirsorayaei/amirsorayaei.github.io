@@ -40,37 +40,37 @@ const CARDS = [
     file: "default.png",
     eyebrow: "Senior Full-Stack Developer",
     title: "I build the product, then I find out if it worked.",
-    foot: "amirsorayaei.com",
+    foot: "amirsorayaei.github.io",
   },
   {
     file: "levita-health.png",
     eyebrow: "Levita Health · 2025 to 2026",
     title: "Taking over a half-built telemedicine platform",
-    foot: "amirsorayaei.com/work/levita-health",
+    foot: "amirsorayaei.github.io/work/levita-health",
   },
   {
     file: "roomvu.png",
     eyebrow: "Roomvu · 2023 to 2025",
     title: "The page people visited and did not subscribe from",
-    foot: "amirsorayaei.com/work/roomvu",
+    foot: "amirsorayaei.github.io/work/roomvu",
   },
   {
     file: "top-menu.png",
     eyebrow: "A.P.P Software Solutions · 2020 to 2023",
     title: "A 4MB bundle and 400 restaurants",
-    foot: "amirsorayaei.com/work/top-menu",
+    foot: "amirsorayaei.github.io/work/top-menu",
   },
   {
     file: "ecatalog.png",
     eyebrow: "A.P.P Software Solutions · 2020 to 2023",
     title: "Setting the architecture, then handing it over",
-    foot: "amirsorayaei.com/work/ecatalog",
+    foot: "amirsorayaei.github.io/work/ecatalog",
   },
   {
     file: "resume.png",
     eyebrow: "Amir Sorayaei",
     title: "Seven years, four companies, every number sourced.",
-    foot: "amirsorayaei.com/resume",
+    foot: "amirsorayaei.github.io/resume",
   },
 ];
 
