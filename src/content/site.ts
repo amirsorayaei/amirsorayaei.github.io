@@ -18,9 +18,12 @@ export const site = {
   resumePdf: "/AmirSorayaei-Resume.pdf",
   /**
    * Where the site answers. Open Graph images are absolute URLs built from
-   * this, so it must point at a host that resolves.
+   * this, so it must point at a host that resolves. Vercel, because
+   * amirsorayaei.github.io only redirects there (scripts/redirect-pages.mjs).
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://amirsorayaei.github.io",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://amirsorayaei-github-io.vercel.app",
 } as const;
 
 /**
